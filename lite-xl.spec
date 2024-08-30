@@ -1,5 +1,5 @@
 Name: lite-xl
-Version: 2.1.3
+Version: 2.1.5
 Release: 1
 Group:   Applications/Editors
 License: MIT and OFL
