@@ -1,11 +1,11 @@
 Name: lite-xl
-Version: 2.1.5
+Version: 2.1.6
 Release: 1
 Group:   Applications/Editors
 License: MIT and OFL
 Summary: A lightweight text editor written in Lua, adapted from
 URL: https://lite-xl.com/
-Source0: https://github.com/lite-xl/lite-xl/archive/refs/tags/v%{version}.tar.gz
+Source0: https://github.com/lite-xl/lite-xl/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: llvm
 BuildRequires: meson
