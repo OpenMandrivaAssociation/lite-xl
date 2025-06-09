@@ -1,5 +1,5 @@
 Name: lite-xl
-Version: 2.1.7
+Version: 2.1.8
 Release: 1
 Group:   Applications/Editors
 License: MIT and OFL
@@ -7,12 +7,14 @@ Summary: A lightweight text editor written in Lua, adapted from
 URL: https://lite-xl.com/
 Source0: https://github.com/lite-xl/lite-xl/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
+BuildSystem:   meson
+BuildOption:   -Duse_system_lua=true
+
 BuildRequires: llvm
-BuildRequires: meson
 BuildRequires: (pkgconfig(lua) >= 5.4 with pkgconfig(lua) < 5.5)
 BuildRequires: pkgconfig(libpcre2-8)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(sdl2)
+BuildRequires: pkgconfig(sdl3)
 BuildRequires: desktop-file-utils
 
 %description
@@ -25,18 +27,7 @@ without doing either.
 The aim of Lite XL compared to lite is to be more user friendly,
 improve the quality of font rendering, and reduce CPU usage.
 
-%prep
-%autosetup
-
-%build
-%meson -Duse_system_lua=true
-%meson_build
-
-%install
-%meson_install
-
-%check
-%meson_test
+%check -p
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.lite_xl.lite_xl.desktop
 
 %files
