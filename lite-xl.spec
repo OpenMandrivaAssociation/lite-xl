@@ -1,6 +1,6 @@
 Name: lite-xl
 Version: 2.1.8
-Release: 1
+Release: 2
 Group:   Applications/Editors
 License: MIT and OFL
 Summary: A lightweight text editor written in Lua, adapted from
@@ -26,6 +26,10 @@ pretty, small and fast easy to modify and extend, or to use
 without doing either.
 The aim of Lite XL compared to lite is to be more user friendly,
 improve the quality of font rendering, and reduce CPU usage.
+
+%patchlist
+# upstream fix - https://github.com/lite-xl/lite-xl/issues/2209#issuecomment-4022509459
+lite-xl-2-fix-freetype2-render-bug.patch
 
 %check -p
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.lite_xl.lite_xl.desktop

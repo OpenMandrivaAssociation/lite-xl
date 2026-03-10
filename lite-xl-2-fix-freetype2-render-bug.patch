@@ -1,0 +1,12 @@
+diff -up lite-xl-2.1.8/src/renderer.c.omv lite-xl-2.1.8/src/renderer.c
+--- lite-xl-2.1.8/src/renderer.c.omv	2026-03-10 19:20:30.924800104 -0400
++++ lite-xl-2.1.8/src/renderer.c	2026-03-10 19:20:52.474639594 -0400
+@@ -170,7 +170,7 @@ static int font_set_render_options(RenFo
+     switch (font->hinting) {
+       case FONT_HINTING_NONE: FT_Library_SetLcdFilter(library, FT_LCD_FILTER_NONE); break;
+       case FONT_HINTING_SLIGHT:
+-      case FONT_HINTING_FULL: FT_Library_SetLcdFilterWeights(library, weights); break;
++      case FONT_HINTING_FULL: //FT_Library_SetLcdFilterWeights(library, weights); break;
+     }
+     return FT_RENDER_MODE_LCD;
+   } else {
